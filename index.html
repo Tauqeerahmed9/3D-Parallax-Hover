@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3D Parallax </title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="top">
+      <div class="perspective">
+        <div class="card">
+          <div class="thumb" style="background-image: url(./VR.jpg)"></div>
+          <h2>3D prallax</h2>
+          <span>Move Your Cursor to see the effect.</span>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+
+    <script>
+        var o = $(".card");
+
+            $(".top").on("mousemove", function (t){
+                var e = -($(window).innerWidth() / 2 - t.pageX) / 30,
+                    n = -($(window).innerHeight() / 2 - t.pageY) / 10;
+
+                    o.attr('style', "transform: rotateY(" + e +"deg) rotateX(" + n +"deg)")
+            })
+    </script>
+  </body>
+</html>
